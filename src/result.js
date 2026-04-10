@@ -33,7 +33,7 @@ export function renderResult(result, userLevels, dimOrder, dimDefs, config) {
   const illusEl = document.getElementById('char-illus')
   illusEl.innerHTML = ''
   const img = document.createElement('img')
-  img.src = `./images/${primary.cn}.png`
+  img.src = `HBIT/images/${primary.cn}.png`
   img.alt = primary.cn
   img.style.width = '160px'
   img.style.height = 'auto'
