@@ -6,7 +6,7 @@
   <title>健康风险画像评估系统</title>
   <meta name="description" content="一个开源的健康风险画像评估系统，基于15个健康行为维度进行科学化分析和匹配。了解你的健康风险类型，获得改善建议。" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>" />
-  <script type="module" crossorigin src="/SBTI/assets/index-Bj3A9Fq8.js"></script>
+  <script type="module" crossorigin src="/SBTI/assets/index-B8QcHaGA.js"></script>
   <link rel="stylesheet" crossorigin href="/SBTI/assets/index-DCGHM5Gu.css">
 </head>
 <body>
@@ -42,11 +42,14 @@
         <!-- 左右分栏：角色卡 + 信息面板 -->
         <div class="result-hero-row">
 
-          <!-- 左侧：角色卡 -->
+          <!-- 左侧：角色卡（图片区域） -->
           <div class="result-char-card" id="result-char-card">
             <div class="char-type-name" id="char-type-name"></div>
             <div class="char-type-code" id="char-type-code"></div>
-            <div class="char-illus" id="char-illus"></div>
+            <!-- 图片占位符区域 -->
+            <div class="char-illus" id="char-illus">
+              <!-- 在此插入你的图片，例如：<img src="your-image.jpg" alt="角色" /> -->
+            </div>
             <div class="char-tagline" id="char-tagline"></div>
           </div>
 
@@ -85,7 +88,7 @@
         <div class="agent-section">
           <p class="agent-title">想自己搭一个？</p>
           <div class="agent-cmd">
-            <code>git clone https://github.com/pingfanfan/SBTI.git && cd SBTI && npm install && npm run dev</code>
+            <code>git clone https://github.com/jonk-wu/HBTI.git && cd HBTI && npm install && npm run dev</code>
           </div>
           <button id="btn-agent" class="btn btn-agent">复制一键部署命令</button>
           <p class="agent-hint">粘贴到 Claude Code / OpenClaw 即可一键运行并自定义</p>

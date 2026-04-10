@@ -23,15 +23,15 @@
     "fallbackThreshold": 60
   },
   "display": {
-    "title": "SBTI 人格测试",
-    "subtitle": "MBTI已经过时，SBTI来了。",
-    "author": "B站UP主@蛆肉儿串儿 原创",
-    "funNote": "本测试仅供娱乐，别拿它当诊断、面试、相亲、分手、招魂、算命或人生判决书。",
-    "funNoteSpecial": "本测试仅供娱乐。隐藏人格和傻乐兜底都属于作者故意埋的损招，请勿把它当成医学、心理学、相学、命理学或灵异学依据。"
+    "title": "健康风险画像评估",
+    "subtitle": "你的身体，正在悄悄告诉你一些事。",
+    "author": "健康科普页面配套测试",
+    "funNote": "本测试仅供健康教育参考，不构成医疗建议。测出三高预备军也请不要只是截图发朋友圈，要去体检。",
+    "funNoteSpecial": "本测试仅供健康教育参考。隐藏画像老烟枪和均衡兜底均属系统特殊机制，请勿将结果作为医疗诊断依据。"
   },
-  "drinkGate": {
-    "questionId": "drink_gate_q1",
+  "smokeGate": {
+    "questionId": "smoke_gate_q1",
     "triggerValue": 3,
-    "drunkTriggerValue": 2
+    "smokerTriggerValue": 2
   }
 }

@@ -5,13 +5,13 @@ import { shuffle, insertAtRandom, insertAfter } from './utils.js'
  */
 export function createQuiz(questions, config, onComplete) {
   const mainQuestions = shuffle(questions.main)
-  const drinkGateQ1 = questions.special.find((q) => q.id === config.drinkGate.questionId)
-  const drinkGateQ2 = questions.special.find((q) => q.id === 'drink_gate_q2')
+  const smokeGateQ1 = questions.special.find((q) => q.id === config.smokeGate.questionId)
+  const smokeGateQ2 = questions.special.find((q) => q.id === 'smoke_gate_q2')
 
-  let queue = insertAtRandom(mainQuestions, drinkGateQ1)
+  let queue = insertAtRandom(mainQuestions, smokeGateQ1)
   let current = 0
   let answers = {}
-  let isDrunk = false
+  let isSmoker = false
 
   const els = {
     fill: document.getElementById('progress-fill'),
@@ -49,19 +49,19 @@ export function createQuiz(questions, config, onComplete) {
   function selectOption(question, option) {
     answers[question.id] = option.value
 
-    // 酒鬼门：如果选了"饮酒"，插入追问
-    if (question.id === config.drinkGate.questionId && option.value === config.drinkGate.triggerValue) {
-      queue = insertAfter(queue, question.id, drinkGateQ2)
+    // 吸烟门：如果选了"吸烟"，插入追问
+    if (question.id === config.smokeGate.questionId && option.value === config.smokeGate.triggerValue) {
+      queue = insertAfter(queue, question.id, smokeGateQ2)
     }
 
-    // 酒鬼检测
-    if (question.id === 'drink_gate_q2' && option.value === config.drinkGate.drunkTriggerValue) {
-      isDrunk = true
+    // 吸烟检测
+    if (question.id === 'smoke_gate_q2' && option.value === config.smokeGate.smokerTriggerValue) {
+      isSmoker = true
     }
 
     current++
     if (current >= totalCount()) {
-      onComplete(answers, isDrunk)
+      onComplete(answers, isSmoker)
     } else {
       renderQuestion()
     }
@@ -70,8 +70,8 @@ export function createQuiz(questions, config, onComplete) {
   function start() {
     current = 0
     answers = {}
-    isDrunk = false
-    queue = insertAtRandom(shuffle(questions.main), drinkGateQ1)
+    isSmoker = false
+    queue = insertAtRandom(shuffle(questions.main), smokeGateQ1)
     renderQuestion()
   }
 
